@@ -13,11 +13,21 @@
   - [ ] 원형
 - [ ] Stack
 - [ ] Queue
+- [ ] Dequeue
 
-3. Dequeue
-4. Tree
-5. Heap
-6.
+2. 비선형 구조
+
+- [ ] 트리
+  - [ ] 일반
+  - [ ] 이진
+- [ ] 그래프
+  - [ ] 방향
+  - [ ] 무방향
+
+3. 기타 구조
+
+- [ ] Trie
+- [ ] HashTable
 
 ## Merge 하는 방법
 
@@ -54,12 +64,19 @@
          - 명사로 종결 (~ 구현, ~ 작성)
        - 한/영 공통
          - 메시지 끝에 마침표(.) 금지
-     - reference : https://junwoo45.github.io/2020-02-06-commit_template/
+     - reference : <https://junwoo45.github.io/2020-02-06-commit_template/>
   3. Origin branch에 Push 및 최신 master branch 반영
      - 수정된 코드가 겹치는 경우 Confilct 가능성
      - master branch에서 pull
      - master -> 개인 branch로 merge
      - Confilct시 해결
-  4.
+  4. Github에서 개인 branch Pull Request 요청
+     - 제목과 본문을 간략하게 명시
+     - 모든 contributer를 오른쪽 메뉴의 Reviewer로 세팅
+     - Code Review 진행
+       - 로직, 변수명 등 모든 내용에 대한 코드 리뷰
+       - 자세한 내용은 추후 작성
+     - 모든 인원이 approve시에 merge.
+     - merge 권한에 대해서는 추후 제어
 
 - 모든 규칙은 구성원들의 협의에 따라 변경이 가능하다. 협의가 변경된 내용들은 변경일자, 변경내용, 작성자를 별도의 문서에 기입한다.
