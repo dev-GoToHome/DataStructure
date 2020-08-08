@@ -8,7 +8,7 @@ public class GTHArrayList{
 
     // 클래스 생성자
     GTHArrayList(){
-        array =;
+        // 1. 배열 선언
     }
 
     // 클래스 생성자 Overiding
