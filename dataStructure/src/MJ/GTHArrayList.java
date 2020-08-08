@@ -1,4 +1,4 @@
-package arrayListMJ;
+package MJ;
 
 // <T>는 배열에 들어갈 타입을 설정한다.
 // Integer, String 등의 타입이 들어간다.
