@@ -48,10 +48,20 @@ public class GTHArrayList {
         return false;
     }
 
+    public boolean isFull(){
+        // 8. ArrayList가 꽉 찬 상태인지 반환
+        return false;
+    }
+
+    public boolean isEmpty(){
+        // 9. ArrayList가 비어있는 상태인지 반환
+        return false;
+    }
+
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("GTHArrayList [ ");
-        for(int i=0; i<size(); i++){
+        for(int i=0; i<this.index; i++){
             sb.append(this.array[i]);
             if(i != size() - 1){
                 sb.append(", ");
