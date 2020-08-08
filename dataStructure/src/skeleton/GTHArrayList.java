@@ -63,7 +63,7 @@ public class GTHArrayList {
         sb.append("GTHArrayList [ ");
         for(int i=0; i<this.index; i++){
             sb.append(this.array[i]);
-            if(i != size() - 1){
+            if(i != this.index - 1){
                 sb.append(", ");
             }
         }
