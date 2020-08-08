@@ -4,7 +4,7 @@ package skeleton;
 public class GTHArrayList{
     private int size ;     // ArrayList 초기 사이즈 설정 변수
     private int index;     // ArrayList 초기 포인터 위치 변수
-    private int array;     // 배열 선언용 변수
+    private int array[];     // 배열 선언용 변수
 
     // 클래스 생성자
     GTHArrayList(){
