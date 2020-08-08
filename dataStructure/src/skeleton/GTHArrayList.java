@@ -61,7 +61,7 @@ public class GTHArrayList {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("GTHArrayList [ ");
-        for(int i=0; i<size(); i++){
+        for(int i=0; i<this.index; i++){
             sb.append(this.array[i]);
             if(i != size() - 1){
                 sb.append(", ");
