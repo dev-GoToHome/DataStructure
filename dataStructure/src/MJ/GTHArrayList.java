@@ -4,10 +4,15 @@ package MJ;
 public class GTHArrayList{
     private int size ;     // ArrayList 초기 사이즈 설정 변수
     private int index;     // ArrayList 초기 포인터 위치 변수
-    private int array[];     // 배열 선언용 변수
+    private int array[];   // 배열 선언용 변수
 
     // 클래스 생성자
     GTHArrayList() {
+        // 1. 배열 선언
+        // 2. 클래스의 size 초기 세팅 진행 => size 10으로
+        this.array = new int[10];
+        this.size = 10;
+        this.index = 0;
     }
 
     // 클래스 생성자 Overiding
@@ -24,11 +29,10 @@ public class GTHArrayList{
         // 현재 포인터의 위치에 데이터를 추가
         // 데이터 추가 후 인덱스+1
         if (this.isFull()) {
-            System.out.println("Full!");
+            throw new Error("Full");
         } else {
             this.array[this.index] = data;
             this.index += 1;
-            System.out.println("Add data : "+data);
         }
     }
 
@@ -36,15 +40,19 @@ public class GTHArrayList{
         // 4. remove method 구현
         // 해당 인덱스의 데이터를 제거
         // 중간 데이터를 제거한 경우 뒤에 있는 데이터를 앞으로 밀어주어야 함.
-        if (index < this.size()) {
-            for (int i=index; i<this.size-1; i++) {
-                this.array[i] = this.array[i+1];
+        try{
+            if ((0 <= index) & (index < this.index)) {
+                for (int i=index; i<this.index-1; i++) {
+                    this.array[i] = this.array[i+1];
+                }
+                this.array[this.index-1] = 0;
+                this.index -= 1;
+            } else {
+                throw new Exception("Invalid index");
             }
-            this.array[this.size-1] = 0;
-            this.size -= 1;
-            System.out.println("Remove index : "+index);
-        } else {
-            System.out.println("Invalid Index!");
+        } catch (Exception e){
+            // TODO: 로직상 에러가 아니지만 어떨게 처리해야 할 지?
+            System.out.println(e);
         }
     }
 
@@ -68,7 +76,7 @@ public class GTHArrayList{
     public boolean contains(int data){
         // 7. 해당 데이터가 ArrayList 내부에 존재 여부를 반환
         // 있으면 true, 없으면 false
-        for (int i=0; i<size(); i++) {
+        for (int i=0; i<this.index; i++) {
             if (this.array[i]==data) {
                 return true;
             }
@@ -76,20 +84,25 @@ public class GTHArrayList{
         return false;
     }
 
-    public boolean isFull() {
-        // 리스트가 가득 찼는지 확인
-        if (this.index==this.size()) {
+    public boolean isFull(){
+        // 8. ArrayList가 꽉 찬 상태인지 반환
+        return this.index == this.size;
+    }
+
+    public boolean isEmpty(){
+        // 9. ArrayList가 비어있는 상태인지 반환
+        if (this.index == 0) {
             return true;
         }
         return false;
     }
 
-    public String toString() {
+    public String toString(){
         StringBuilder sb = new StringBuilder();
         sb.append("GTHArrayList [ ");
-        for(int i=0; i<size(); i++){
+        for(int i=0; i<this.index; i++){
             sb.append(this.array[i]);
-            if(i != size() - 1){
+            if(i != this.index - 1){
                 sb.append(", ");
             }
         }
@@ -104,12 +117,21 @@ public class GTHArrayList{
         boolean result;
 
         GTHArrayList aryList = new GTHArrayList(5);
+        result = aryList.isEmpty();
+        System.out.println("Is empty? : " + result);
+
         aryList.add(1);
+        System.out.println("Add value : 1");
         aryList.add(2);
+        System.out.println("Add value : 2");
         aryList.add(5);
+        System.out.println("Add value : 5");
         aryList.add(4);
+        System.out.println("Add value : 4");
         aryList.add(5);
-        aryList.add(5);
+        System.out.println("Add value : 5");
+//        aryList.add(5);
+//        System.out.println("Add value : 5");
         aryStr = aryList.toString();
         System.out.println(aryStr);
 
@@ -125,12 +147,16 @@ public class GTHArrayList{
         aryStr = aryList.toString();
         System.out.println(aryStr);
 
+        aryList.remove(-1);
+        aryStr = aryList.toString();
+        System.out.println(aryStr);
+
         idx = aryList.indexOf(5);
-        System.out.println("Index of 5 is "+idx);
+        System.out.println("Index of 5 is " + idx);
 
         result = aryList.contains(5);
-        System.out.println("Does List contain 5? : "+result);
+        System.out.println("Does List contain 5? : " + result);
         result = aryList.contains(0);
-        System.out.println("Dose List contain 0? : "+result);
+        System.out.println("Dose List contain 0? : " + result);
     }
 }
