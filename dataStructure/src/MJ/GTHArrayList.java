@@ -28,11 +28,15 @@ public class GTHArrayList{
         // 3. add method 구현
         // 현재 포인터의 위치에 데이터를 추가
         // 데이터 추가 후 인덱스+1
-        if (this.isFull()) {
-            throw new Error("Full");
-        } else {
-            this.array[this.index] = data;
-            this.index += 1;
+        try {
+            if (this.isFull()) {
+                throw new Exception("Full");
+            } else {
+                this.array[this.index] = data;
+                this.index += 1;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
 
@@ -51,7 +55,6 @@ public class GTHArrayList{
                 throw new Exception("Invalid index");
             }
         } catch (Exception e){
-            // TODO: 로직상 에러가 아니지만 어떨게 처리해야 할 지?
             System.out.println(e);
         }
     }
@@ -91,10 +94,7 @@ public class GTHArrayList{
 
     public boolean isEmpty(){
         // 9. ArrayList가 비어있는 상태인지 반환
-        if (this.index == 0) {
-            return true;
-        }
-        return false;
+        return this.index == 0;
     }
 
     public String toString(){
@@ -130,12 +130,12 @@ public class GTHArrayList{
         System.out.println("Add value : 4");
         aryList.add(5);
         System.out.println("Add value : 5");
-//        aryList.add(5);
-//        System.out.println("Add value : 5");
+        aryList.add(5);
+        System.out.println("Add value : 5");
         aryStr = aryList.toString();
         System.out.println(aryStr);
 
-        aryList.remove(1);
+        aryList.remove(0);
         aryStr = aryList.toString();
         System.out.println(aryStr);
 
