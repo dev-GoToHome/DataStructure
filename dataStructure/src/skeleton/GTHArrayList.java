@@ -3,17 +3,20 @@ package skeleton;
 // <T>는 배열에 들어갈 타입을 설정한다.
 // Integer, String 등의 타입이 들어간다.
 public class GTHArrayList<T> {
-    private int size;     // ArrayList 초기 사이즈 설정 변수
-    private int pointer;  // ArrayList 초기 포인터 위치 변수
+    private int size ;     // ArrayList 초기 사이즈 설정 변수
+    private int index;     // ArrayList 초기 포인터 위치 변수
+    private int array;     // 배열 선언용 변수
 
     // 클래스 생성자
     GTHArrayList(){
-        // 1. 포인터의 기본 세팅을 설정
+        // 1. 배열 선언
     }
 
     // 클래스 생성자 Overiding
     GTHArrayList(int size){
+        // 1. 배열 선언
         // 2. 클래스의 size 초기 세팅 진행 => size 10으로
+
     }
 
     public void add(T data){
