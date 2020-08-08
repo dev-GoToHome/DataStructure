@@ -63,7 +63,7 @@ public class GTHArrayList {
         sb.append("GTHArrayList [ ");
         for(int i=0; i<this.index; i++){
             sb.append(this.array[i]);
-            if(i != size() - 1){
+            if(i != this.index - 1){
                 sb.append(", ");
             }
         }
@@ -72,7 +72,7 @@ public class GTHArrayList {
     }
 
     // 클래스를 테스트 해 볼 수 있는 메인 함수
-    public static void main(String args[]){
+    public static void main(String[] args){
         GTHArrayList aryList = new GTHArrayList();
         System.out.println("데이터 출력");
         System.out.println(aryList.toString());
