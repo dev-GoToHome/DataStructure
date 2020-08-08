@@ -3,6 +3,7 @@ package SH;
 // 이 ArrayList는 Integer Type만 다룬다
 public class GTHArrayList {
     private static final int DEFAULT_SIZE = 10;   // ArrayList 초기 사이즈 설정 변수
+    private static final int DEFAULT_INDEX = 0;   // ArrayList 초기 사이즈 설정 변수
     private int size ;     // ArrayList 초기 사이즈 설정 변수
     private int index;     // ArrayList 초기 포인터 위치 변수
     private int array[];     // 배열 선언용 변수
@@ -21,13 +22,15 @@ public class GTHArrayList {
     private void setDefault(int size){
         this.size = size;
         this.array = new int[this.size];
+        this.index = DEFAULT_INDEX;
     }
 
     public void add(int data){
         // 3. add method 구현
         // 현재 포인터의 위치에 데이터를 추가
         // 데이터 추가 후 인덱스+1
-
+        this.array[this.index] = data;
+        this.index++;
     }
 
     public void remove(int index){
