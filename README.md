@@ -2,6 +2,16 @@
 
 자료구조 공부하는 Repository
 
+## 프로젝트 상세정보
+
+- 사용언어 : Java version 1.8
+- IDE : Intellij 사용 권장 (필수 x)
+
+## 파일 경로
+
+- dataStructure/src/skeleton: 스켈레톤 코드 경로
+- dataStructure/src/(nameInitial) : 개인 구현 자료구조 코드 경로
+
 ## Todo List
 
 1. 선형구조
